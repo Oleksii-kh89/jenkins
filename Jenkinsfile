@@ -5,7 +5,7 @@ pipeline {
 
         stage('Git') {
             steps {
-                //git branch: 'main', url: 'https://github.com/Oleksii-kh89/pp.git'
+                
                 git branch: 'task1', url: 'https://github.com/Oleksii-kh89/performance.git'
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                 echo "You choose: ${params.Duration}"
                 sh 'cd /home/oleksii/gatling-charts-highcharts-bundle-3.6.0/bin;export JAVA_OPTS="-Dusers=${Users} -Dduration=${Duration} -Dramp=${Ramp} -Dname=${TestName}"; sh gatling.sh -sf /home/oleksii/gatling-charts-highcharts-bundle-3.6.0/user-files/simulations -s FloodSimulation -rf /home/oleksii/gatling-charts-highcharts-bundle-3.6.0/res'
 
-                //sh 'gatling.sh -sf /home/oleksii/gatling-charts-highcharts-bundle-3.6.0/user-files/simulations -s FloodSimulation'
+             
             }
 
         }
